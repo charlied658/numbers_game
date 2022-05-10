@@ -40,8 +40,6 @@ def gameLoop(window):
             print(result)
             information = score_guess(numberToGuess, result)
             print("info gotten", information)
-
-            
             #Call a method to pass a string that does the check. 
             #result is going to be array of ints
             s = [str(i) for i in result] 
