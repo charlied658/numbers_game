@@ -1,5 +1,5 @@
 import PySimpleGUI as prac
-
+import GamePage
 
 layout = [[prac.Button(button_text = 'Start Game',size =(15, 1), key = "-START_GAME-")]]
 
@@ -10,5 +10,9 @@ while True:  # Event Loop
     #print(event, values)
     if event == prac.WIN_CLOSED:
         break
+    elif event == "-START_GAME-":
+        gameWindow = GamePage.createGamePage()
+        GamePage.gameLoop(gameWindow)
+        print("Create a GamePAge")
 
 window.close()
