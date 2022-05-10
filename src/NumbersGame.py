@@ -26,7 +26,7 @@ def score_guess(number_instance, guess):
                 good += 1
             else:
                 regular += 1
-    format_results(good, regular)
+    return format_results(good, regular)
 
 
 def process_input(input_string):
