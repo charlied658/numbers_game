@@ -1,11 +1,12 @@
 import PySimpleGUI as prac
-from NumbersGame import score_guess, generate_number
+from numpy import info
+from NumbersGame import score_guess, generate_number, process_input
 
 
 prac.theme('BluePurple')
 
+
 user_guesses = []
-numberToGuess = generate_number()
 
 
 
@@ -26,6 +27,8 @@ def createGamePage():
     return window
 
 def gameLoop(window):
+    global user_guesses
+    numberToGuess = generate_number()
     while True:  # Event Loop
         event, values = window.read()
         #print(event, values)
@@ -33,8 +36,18 @@ def gameLoop(window):
             break
         if event == "Submit":
             input = values.get(0)
-            print(type(input))
-            list = [input, "1R"]
+            result = process_input(input)
+            print(result)
+            information = score_guess(numberToGuess, result)
+            print("info gotten", information)
+
+            
+            #Call a method to pass a string that does the check. 
+            #result is going to be array of ints
+            s = [str(i) for i in result] 
+            # # Join list items using join()
+            res = int("".join(s))
+            list = [res, information]
             user_guesses.append(list)
             window.Element("-TABLE-").update(values = user_guesses)
             window.refresh()
