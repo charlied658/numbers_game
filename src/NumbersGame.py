@@ -3,13 +3,33 @@
 import random
 from src.StringFormatting import format_results, find_possible_solutions
 
-digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-number_instance = []
 
-for i in range(4):
-    digit = random.choice(digits)
-    digits.remove(digit)
-    number_instance.append(digit)
+def generate_number():
+    digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    number_instance = []
+
+    for i in range(4):
+        digit = random.choice(digits)
+        digits.remove(digit)
+        number_instance.append(digit)
+
+    return number_instance
+
+
+def score_guess(number_instance, guess):
+    good = 0
+    regular = 0
+
+    for i in range(4):
+        if guess[i] in number_instance:
+            if i == number_instance.index(guess[i]):
+                good += 1
+            else:
+                regular += 1
+    format_results(good, regular)
+
+
+number_instance = generate_number()
 
 guess_list = []
 guess_results = []
