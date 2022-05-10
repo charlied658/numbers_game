@@ -32,10 +32,10 @@ while running:
         quit()
     elif user_input == "help":
         print("> quit - Quit the game" +
-              "\n> help - List commands" +
-              "\n> list - List previous guesses" +
-              "\n> solutions - Count the number of possible solutions remaining" +
-              "\n> print_solutions - List the remaining possible solutions")
+            "\n> help - List commands" +
+            "\n> list - List previous guesses" +
+            "\n> solutions - Count the number of possible solutions remaining" +
+            "\n> print_solutions - List the remaining possible solutions")
     elif user_input == "list":
         if len(guess_list) == 0:
             print("> No guesses")
