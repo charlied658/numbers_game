@@ -29,6 +29,48 @@ def score_guess(number_instance, guess):
     format_results(good, regular)
 
 
+def process_input(input_string):
+    input = input_string.split()
+
+    if len(input) == 0:
+        user_input = ""
+    else:
+        user_input = input[0]
+    validGuess = False
+
+    nonNumeric = False
+    for i in range(len(user_input)):
+        if not user_input[i].isnumeric():
+            nonNumeric = True
+            break
+
+    if len(user_input) == 0:
+        nonNumeric = True
+
+    if nonNumeric:
+        print("> Not a valid number")
+    else:
+        if len(user_input) != 4:
+            print("> Number must be length 4")
+        else:
+            validGuess = True
+
+    guess = []
+
+    if validGuess:
+        for i in range(4):
+            digit = int(user_input[i])
+            if digit in guess:
+                print("> No repeated digits")
+                validGuess = False
+                break
+            guess.append(digit)
+
+        return guess
+
+    return None
+
+
 def main():
     number_instance = generate_number()
 
@@ -39,7 +81,8 @@ def main():
 
     while running:
 
-        input_string = input("Guess a number:").split()
+        input_string = input("Guess a number:")
+        guess = process_input(input_string)
 
         if len(input_string) == 0:
             user_input = ""
