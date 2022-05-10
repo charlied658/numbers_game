@@ -1,11 +1,11 @@
 import PySimpleGUI as prac
-import NumbersGame
+from NumbersGame import score_guess, generate_number
 
 
 prac.theme('BluePurple')
 
 user_guesses = []
-# numberToGuess generate from NumberGame pythong file
+numberToGuess = generate_number()
 
 
 
@@ -33,6 +33,7 @@ def gameLoop(window):
             break
         if event == "Submit":
             input = values.get(0)
+            print(type(input))
             list = [input, "1R"]
             user_guesses.append(list)
             window.Element("-TABLE-").update(values = user_guesses)

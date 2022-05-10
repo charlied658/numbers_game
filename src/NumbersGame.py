@@ -1,7 +1,7 @@
 # Numbers game simulation
 
 import random
-from src.StringFormatting import format_results, find_possible_solutions
+from StringFormatting import format_results, find_possible_solutions
 
 
 def generate_number():
