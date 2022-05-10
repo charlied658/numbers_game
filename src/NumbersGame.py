@@ -1,8 +1,7 @@
 # Numbers game simulation
 
 import random
-
-from src.StringFormatting import format_results, find_possible_solutions
+from StringFormatting import format_results, find_possible_solutions
 
 digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 number_instance = []
@@ -58,7 +57,7 @@ while running:
             nonNumeric = True
 
         if nonNumeric:
-            print("> Not a valid command. Type 'help' for list of commands")
+            print("Not a valid command. Type 'help' for list of commands")
         else:
             if len(user_input) != 4:
                 print("> Number must be length 4")

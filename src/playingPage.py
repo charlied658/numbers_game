@@ -1,4 +1,6 @@
 import PySimpleGUI as prac
+import tkinter as tk
+from tkinter import ttk
 
 
 prac.theme('BluePurple')
@@ -6,6 +8,9 @@ prac.theme('BluePurple')
 user_guesses = [
     [1205, "2R"],
     [4567, "3R"]]
+
+
+
 
 headings = ["Your Guesses", "Information Recieved"]
 
@@ -20,7 +25,6 @@ layout = [[prac.Table(values = user_guesses, headings = headings,
         size = (50,50))], 
         [prac.Text('Your Guess', size =(15, 1)), prac.InputText()],
         [prac.Submit(), prac.Cancel()]]
-
 window = prac.Window('Number game table', layout, size = [650,700], resizable=True)
 
 while True:  # Event Loop
