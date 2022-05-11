@@ -8,7 +8,12 @@ prac.theme('BluePurple')
 
 user_guesses = []
 
+#TODO In TKINter there is an entry widget
+# entry = ttk.Entry(root, widht = 30).pack()
+# Does not have a command option.  TODO has to be binded
 
+#entry.get()  will return the contents
+##When i config to show = "* " data inputted is not being shown
 
 headings = ["Your Guesses", "Information Recieved"]
 def createGamePage():

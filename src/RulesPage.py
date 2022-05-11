@@ -1,5 +1,2 @@
-import PySimpleGUI as prac
-
-
-def createRulesPage():
-    prac.theme("Bluepurple")
+from tkinter import *
+from tkinter import ttk
