@@ -1,20 +1,23 @@
 
 import PySimpleGUI as prac
 import GamePage
+from RulesPage import createRulesPage
 from tkinter import *
 from tkinter import ttk
 
 
-root = Tk(screenName = "MainPage", baseName = "MainPage")
+root = Tk(screenName = "MainPage")
 logo = PhotoImage(file = "../Images/code.gif")
-label = ttk.Label(root, text = "Welcome! I am glad you took the challenge to play the game of numbers that only few have mastered...!!", 
-                wraplength=200, justify = CENTER, 
-                foreground = "blue", background = "yellow", 
-                font = ("Courier", 12, "bold"), image = logo, compound= "top")
+frame = ttk.Frame(root, height= 1800, width=1800)
+frame.pack()
+label = ttk.Label(frame, text = "Welcome! I am glad you took the challenge to play the game of numbers that only few have mastered...!!", 
+                justify = CENTER, 
+                foreground = "blue", 
+                font = ("Courier", 12, "bold"),image = logo, compound= "top")
 label.pack()
-startGameButton = ttk.Button(root, text = 'Start Game')
+startGameButton = ttk.Button(frame, text = 'Start Game')
 startGameButton.pack()
-rulesPageButton = ttk.Button(root, text = "Rules")
+rulesPageButton = ttk.Button(frame, text = "Rules")
 rulesPageButton.pack()
 
 def gameStart():
@@ -22,7 +25,7 @@ def gameStart():
     GamePage.gameLoop(window)
 
 def openRulesPAge():
-    pass
+    createRulesPage()
 
 startGameButton.config(command = gameStart)
 rulesPageButton.config(command = openRulesPAge)

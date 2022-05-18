@@ -1,6 +1,7 @@
 import PySimpleGUI as prac
 from numpy import info
 from NumbersGame import score_guess, generate_number, process_input
+from StringFormatting import find_possible_solutions
 
 
 prac.theme('BluePurple')
@@ -27,7 +28,9 @@ def createGamePage():
             row_height = 35,
             size = (50,50))], 
             [prac.Text('Your Guess', size =(15, 1)), prac.InputText()],
-            [prac.Submit(), prac.Cancel()]]
+            [prac.Text("Number of possible solutions is:", size = (20,2), key = "SolutionArea")],
+            [prac.Submit(), prac.Cancel()],
+            [prac.Button("Number of Possible solutions", key = "-NumberOfSolutions-")]]
     window = prac.Window('Number game table', layout, size = [650,700], resizable=True)
     return window
 
@@ -54,5 +57,7 @@ def gameLoop(window):
             user_guesses.append(list)
             window.Element("-TABLE-").update(values = user_guesses)
             window.refresh()
+        elif event == "-NumberOfSolutions-":
+            window.Element("SolutionArea").update(text= f"Number of solutions is {find_possible_solutions(user_guesses, user_guesses)}")
 
     window.close()
