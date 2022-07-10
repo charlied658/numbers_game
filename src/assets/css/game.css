@@ -1,0 +1,103 @@
+:root {
+	--primary-color: #F5F7F5;
+	--secondary-color: #008741;
+	--on-primary-color: #000000;
+	--on-primary-subtext-color: #6E6E73;
+	--on-secondary-color: #FFFFFF;
+	--primary-color-HSL: 120, 11%, 96%;
+	--secondary-color-HSL: 149, 100%, 26%;
+	--on-primary-color-HSL: 0, 0%, 0%;
+	--on-primary-subtext-color-HSL: 240, 2%, 44%;
+	--on-secondary-color-HSL: 0, 0%, 100%;
+
+	font-family: 'Nunito', sans-serif;
+
+	/* For Shoelace components */
+	--sl-input-font-family: 'Nunito', sans-serif;
+	--sl-input-font-size-medium: 14px;
+	--sl-color-primary-600: #008741;
+	--sl-input-color: #666666;
+	--sl-input-border-width: 1.5px;
+	--sl-input-border-color: rgb(173, 173, 173);
+}
+
+/* Animations */
+.animated {
+	animation-duration: 1s;
+	animation-fill-mode: both
+}
+
+@keyframes slideInUp {
+	0% {
+		transform: translate3d(0, 2000px, 0)
+	}
+
+	to {
+		transform: translateZ(0)
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1
+	}
+
+	to {
+		opacity: 0
+	}
+}
+
+/* General CSS */
+
+html {
+	width: 100vw;
+	height: 100vh;
+}
+
+body {
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 30px;
+	overflow-x: hidden;
+	background-color: var(--primary-color);
+	color: #666666;
+}
+
+
+.container-fluid{
+	display: flexbox;
+	margin: 100px auto;
+	border: 1px solid black;
+	height: 500px;
+	width: 80%;
+}
+
+.results{
+	height:80%;
+}
+
+.guess{
+	height:20%;
+	display: inline-block;
+}
+
+.playerGuesses{
+	border:1px solid black;	
+}
+
+.computerGuesses{
+	border:1px solid black;
+	
+}
+
+button{
+	width: 300px;
+	box-shadow: 6px 4px 5px rgb(159, 158, 158);
+}
+
+button:hover{
+	box-shadow: 2px 2px 2px rgb(159, 158, 158);
+}
+
+
