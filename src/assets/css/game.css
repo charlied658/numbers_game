@@ -70,7 +70,8 @@ body {
 	margin: 100px auto;
 	border: 1px solid black;
 	height: 500px;
-	width: 80%;
+	width: 20%;
+	border-radius: 15%;
 }
 
 .results{
@@ -80,10 +81,14 @@ body {
 .guess{
 	height:20%;
 	display: inline-block;
+	justify-content: center;
 }
 
 .playerGuesses{
 	border:1px solid black;	
+	width:90%;
+	height:80%;
+	margin:auto;
 }
 
 .computerGuesses{
@@ -92,7 +97,7 @@ body {
 }
 
 button{
-	width: 300px;
+	width: 150px;
 	box-shadow: 6px 4px 5px rgb(159, 158, 158);
 }
 
